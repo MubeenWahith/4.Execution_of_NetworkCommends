@@ -2,48 +2,35 @@
 ## AIM :Use of Network commands in Real Time environment
 ## Software : Command Prompt And Network Protocol Analyzer
 ## Procedure: To do this EXPERIMENT- follows these steps:
-<BR>
-In this EXPERIMENT- students have to understand basic networking commands e.g cpdump, netstat, ifconfig, nslookup ,traceroute and also Capture ping and traceroute PDUs using a network protocol analyzer 
-<BR>
-All commands related to Network configuration which includes how to switch to privilege mode
-<BR>
-and normal mode and how to configure router interface and how to save this configuration to
-<BR>
-flash memory or permanent memory.
-<BR>
-This commands includes
-<BR>
-• Configuring the Router commands
-<BR>
-• General Commands to configure network
-<BR>
-• Privileged Mode commands of a router 
-<BR>
-• Router Processes & Statistics
-<BR>
-• IP Commands
-<BR>
-• Other IP Commands e.g. show ip route etc.
-<BR>
+To do this experiment, follow these steps:
 
-## program
-client
-```
-import socket
+Students have to understand basic networking commands such as:
 
-s = socket.socket()
-s.connect(('localhost', 8000))
+- `tcpdump`
+- `netstat`
+- `ifconfig`
+- `nslookup`
+- `traceroute`
 
-while True:
-    ip = input("Enter the website you want to ping (or type 'exit' to quit): ")
-    s.send(ip.encode('utf-8'))
-    if ip.lower() == 'exit':
-        break
-    print(s.recv(4096).decode('utf-8'))
+Additionally, capture **ping** and **traceroute** PDUs using a **network protocol analyzer**.
 
-s.close()
-```
-server
+This includes all commands related to **network configuration**, such as:
+
+- Switching to **privileged mode** and **normal mode**
+- Configuring **router interfaces**
+- Saving the configuration to **flash memory** or **permanent memory**
+
+### This includes the following commands:
+
+- Configuring the router commands  
+- General commands to configure network  
+- Privileged mode commands of a router  
+- Router processes & statistics  
+- IP commands  
+- Other IP commands (e.g., `show ip route`)
+
+## Program
+server.py
 ```
 import socket
 from pythonping import ping
@@ -68,9 +55,25 @@ while True:
 
 c.close()
 ```
+client.py
+```
+import socket
+
+s = socket.socket()
+s.connect(('localhost', 8000))
+
+while True:
+    ip = input("Enter the website you want to ping (or type 'exit' to quit): ")
+    s.send(ip.encode('utf-8'))
+    if ip.lower() == 'exit':
+        break
+    print(s.recv(4096).decode('utf-8'))
+
+s.close()
+```
 
 ## Output
-![alt text](<Screenshot 2026-03-15 203910.png>)
-![alt text](<Screenshot 2026-03-15 203920.png>)
+![alt text](<cn 4a.png>)
+
 ## Result
 Thus Execution of Network commands Performed 
